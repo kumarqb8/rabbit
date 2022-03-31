@@ -37,7 +37,7 @@ jobs:
           "dict_set exec_properties container-image:docker://${IMAGE}@${DIGEST}" \
           //:erlang_${{ matrix.short_version }}_platform || test $? -eq 3
     - name: CREATE PULL REQUEST
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v4.0.1
       with:
         title: Adopt latest rabbitmq-server-buildenv:linux-erlang-${{ matrix.erlang_version }} for RBE
         branch: bump-rbe-image
